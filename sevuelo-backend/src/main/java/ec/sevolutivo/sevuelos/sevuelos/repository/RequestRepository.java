@@ -2,6 +2,7 @@ package ec.sevolutivo.sevuelos.sevuelos.repository;
 
 import ec.sevolutivo.sevuelos.sevuelos.domain.Request;
 import org.springframework.data.jpa.repository.*;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 
@@ -12,6 +13,6 @@ import java.util.List;
 @Repository
 public interface RequestRepository extends JpaRepository<Request, Long> {
 
-    List<Request> findAllByName(String destination);
+    //List<Request> findAllByName(String destination);
 
 }
