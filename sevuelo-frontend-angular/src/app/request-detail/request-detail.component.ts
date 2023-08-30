@@ -29,10 +29,19 @@ export class RequestDetailComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.requestService.getRequest(Number.parseInt(id))
       .subscribe(request => this.request = request);
+      console.log(this.request)
   }
 
   reserve(): void {
     this.requestService.reserveRequest(this.request)
+      .subscribe((newRequest) => {
+        this.request = newRequest
+        this.previousState();
+      }
+    );
+  }
+  revert(): void {
+    this.requestService.revertRequest(this.request)
       .subscribe((newRequest) => {
         this.request = newRequest
         this.previousState();

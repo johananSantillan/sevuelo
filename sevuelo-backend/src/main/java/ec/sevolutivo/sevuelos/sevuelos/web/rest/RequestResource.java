@@ -52,6 +52,13 @@ public class RequestResource {
         request.setStatus(RequestStatus.RESERVED);
         requestRepository.save(request);
     }
+    @PutMapping("/revert")
+    public void revert(@RequestBody Request request) {
+        log.debug("REST request to revert state");
+        request.setStatus(RequestStatus.NEW);
+        requestRepository.save(request);
+    }
+
 
 
 }

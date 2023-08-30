@@ -24,12 +24,20 @@
               </span>
             </label>
         </div>
+        <div>
+          <label>Observations:
+            <span>
+                {{request.observations}}
+            </span>
+          </label>
+      </div>
         <button type="submit"
             (click)="previousState()"
             class="btn btn-info">
           <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
         </button>
         <button (click)="reserve()" class="btn btn-success">Reserve</button>
+        <button (click)="revert()" class="btn btn-success">Revert</button>
     </div>
   </div>
 </div>

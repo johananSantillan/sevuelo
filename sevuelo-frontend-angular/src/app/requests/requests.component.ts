@@ -11,11 +11,11 @@ export class RequestsComponent implements OnInit {
 
   requests: Request[];
   selectedRequest: Request;
-
   constructor(private requestService: RequestService) { }
 
   ngOnInit(): void {
     this.getRequests();
+    
   }
 
   getRequests(): void {
